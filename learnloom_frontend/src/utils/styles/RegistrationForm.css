@@ -1,42 +1,61 @@
 .register-form-wrap{
     width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    max-width: 600px;
     background: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    height: 80vh ;
+}
+
+.register-form {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    width: 50vh;
 }
-.register-form{
+
+.text-input {
+    margin-bottom: 0; 
+    padding: 15px; 
+    width: 100%; 
+    box-sizing: border-box;
+    font-size: 15px;
 }
-.username{
-    margin-bottom: 10px;
-}
-.email{
-    margin-bottom: 10px;
-}
+
 .submit-button {
-    background: #007bff;
-    color: #fff;
+    background: #D19FB5;
+    color: #0C1818;
     border: none;
     padding: 10px;
-    border-radius: 5px;
     cursor: pointer;
+    font-size: 2vh;
+    font-weight: 600;
 }
+
 .login-wrap{
     margin-top: 20px;
     text-align: center;
 }
-.init-page {
-    background-image: url('../../assets/Online-courses.jpg');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    height: 100vh;  
+
+.form-switch-button{
+    background: none;
+    color: black;
+    border: none;
+    padding-bottom: 10px;
+    cursor: pointer;
+    font-size: 2vh;
+    align-items: start;
+}
+
+.form-switch-button:hover {
+    background-color: #C29F81; 
+}
+
+.password-input-container {
+    position: relative;
+}
+
+.password-toggle-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
 }

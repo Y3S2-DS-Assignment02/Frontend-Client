@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { login } from '../../services/AuthService';
-import { useNavigate } from 'react-router-dom';
 import '../../utils/styles/Login.css';
+import { UilEye } from '@iconscout/react-unicons';
 
-const Login = () => {
+const Login = (props) => {
+    const { toggleLogin, toggleRegister } = props;
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const navigate = useNavigate();
+    const [showPassword, setShowPassword] = useState(false);
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
@@ -21,28 +23,31 @@ const Login = () => {
         await login(email, password);
     };
 
-    const handleNavigate = () => {
-        navigate('/create-account');
-    }
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
 
     return (
         <div>
             <div className="login-form-wrap">
-                <h2>Login</h2>
+                <div className='form-change-buttons'>
+                    <button className="form-switch-button" onClick={toggleRegister}>Register</button>
+                    <button className="form-switch-button" onClick={toggleLogin}>SignIn</button>
+                </div>
                 <form className="login-form">
                     <p>
-                    <input type="text" className="username" name="username" placeholder="Username" onChange={handleEmailChange} required />
+                        <input type="text" className="text-input" name="username" placeholder="Username" onChange={handleEmailChange} required />
                     </p>
                     <p>
-                    <input type="email" className="email" name="email" placeholder="Email Address" onChange={handlePasswordChange} required />
+                        <div className="password-input-container">
+                            <input type={showPassword ? "text" : "password"} className="text-input" name="password" placeholder="Password" onChange={handlePasswordChange} required />
+                            <span className="password-toggle-icon" onClick={togglePasswordVisibility}><UilEye size="24" color="black" /></span>
+                        </div>
                     </p>
                     <p>
-                    <button type="submit" className='submit-button' onClick={handleSubmit}>Login</button>
+                        <button type="submit" className='submit-button' onClick={handleSubmit}>Sign In</button>
                     </p>
                 </form>
-                <div id="create-account-wrap">
-                    <p>Not a member? <button onClick={handleNavigate}>Create Account</button></p>
-                </div>
             </div>
         </div>
     );
