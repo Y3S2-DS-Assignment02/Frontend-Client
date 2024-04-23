@@ -1,0 +1,62 @@
+.login-form-wrap{
+    width: 100%;
+    max-width: 500px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 80vh ;
+}
+.login-form {
+    display: flex;
+    flex-direction: column;
+    width: 50vh;
+}
+.text-input {
+    padding: 15px; 
+    width: 100%; 
+    box-sizing: border-box;
+    font-size: 15px;
+}
+.submit-button {
+    background: #592584;
+    color: #D8DCF4;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 70%;
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+.create-account-wrap{
+    margin-top: 20px;
+    text-align: start;
+}
+
+.form-switch-button{
+    background: none;
+    color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 2vh;
+    align-items: start;
+}
+
+.form-switch-button:hover {
+    background-color: #592584; 
+}
+
+.password-input-container {
+    position: relative;
+}
+
+.password-toggle-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+

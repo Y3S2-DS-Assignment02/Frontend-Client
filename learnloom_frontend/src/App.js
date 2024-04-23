@@ -1,15 +1,24 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import HomePage from './components/Home/HomePage'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import InitialPage from "./pages/InitialPage";
+import HomePage from "./pages/HomePage";
+import PrivateRoutes from "./utils/auth/PrivateRoutes";
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App-header"></header>
+      <body style={{ display: "flex", flexDirection: "column" }}>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route path="/" element={<InitialPage />} />
+            <Route path="/login" element={<InitialPage />} exact />
+            <Route element={<PrivateRoutes />}>
+              <Route path="/dashboard" element={<HomePage />} exact />
+            </Route>
           </Routes>
         </BrowserRouter>
-      </header>
+      </body>
     </div>
   );
 }
