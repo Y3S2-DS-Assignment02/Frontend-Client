@@ -7,10 +7,25 @@
     height: 100vh; 
 }
 .welcome-text {
+    display: flex;
+    flex-direction: column;
     flex: 1;
     padding: 20px;
-    background-color: #5FB2B1;
+    background-color: #060814;
     height: 100%;
+    font-family: 'Roboto', sans-serif;
+    align-items: start;
+    justify-content: center;
+    padding-left: 5vh;
+}
+.welcome-text h1 {
+    color: #D8DCF4;
+    margin: 0;
+    font-size: 4.875rem;
+    font-weight: 700;
+}
+.welcome-text .welcome-title {
+    color: #AC3CC8;
 }
 
 .render-form {
@@ -18,6 +33,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     background-color: white;
     height: 100%;
 }

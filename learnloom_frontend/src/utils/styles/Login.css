@@ -18,15 +18,16 @@
     font-size: 15px;
 }
 .submit-button {
-    background: #D19FB5;
-    color: #0C1818;
+    background: #592584;
+    color: #D8DCF4;
     border: none;
     padding: 10px;
     cursor: pointer;
     width: 70%;
-    font-size: 15px;
-
+    font-size: 1.125rem;
+    font-weight: 500;
 }
+
 .create-account-wrap{
     margin-top: 20px;
     text-align: start;
@@ -44,7 +45,7 @@
 }
 
 .form-switch-button:hover {
-    background-color: #C29F81; 
+    background-color: #592584; 
 }
 
 .password-input-container {

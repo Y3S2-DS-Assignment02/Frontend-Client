@@ -18,8 +18,9 @@ const InitialPage = () => {
     return (
         <div className="init-page">
             <div className="welcome-text">
-                <h1>Welcome to our App</h1>
-                <p>Sign in or register to get started</p>
+                <h1>Start</h1>
+                <h1>learning</h1>
+                <h1 className="welcome-title">with LearnLoom</h1>
             </div>
             <div className="render-form">
                 <div>

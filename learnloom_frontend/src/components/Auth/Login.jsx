@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { login } from '../../services/AuthService';
 import '../../utils/styles/Login.css';
 import { UilEye } from '@iconscout/react-unicons';
+import { useNavigate } from 'react-router-dom';
 
 const Login = (props) => {
     const { toggleLogin, toggleRegister } = props;
@@ -9,6 +10,8 @@ const Login = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
+
+    const navigate = useNavigate();
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
@@ -20,7 +23,16 @@ const Login = (props) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await login(email, password);
+        try {
+            const response = await login(email, password);
+        if (response) {
+            navigate('/dashboard');
+        } else {
+            alert('Invalid credentials');
+        }
+        } catch (error) {
+           alert('Something went wrong'); 
+        } 
     };
 
     const togglePasswordVisibility = () => {

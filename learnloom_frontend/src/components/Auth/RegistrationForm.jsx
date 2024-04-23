@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../../utils/styles/RegistrationForm.css';
-import { UilEye } from '@iconscout/react-unicons';
+import { UilEye, UilEyeSlash  } from '@iconscout/react-unicons';
+import { registerLearner } from '../../services/AuthService';
+import { useNavigate } from 'react-router-dom';
 
 const RegistrationForm = (props) => {
     const { toggleLogin, toggleRegister } = props;
@@ -13,6 +15,8 @@ const RegistrationForm = (props) => {
     const [fullname, setFullname] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [showRepeatPassword, setShowRepeatPassword] = useState(false);
+
+    const navigate = useNavigate();
 
     const handleUsernameChange = (e) => {
         setUsername(e.target.value);
@@ -40,7 +44,17 @@ const RegistrationForm = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Perform registration logic here
+        if (password !== repeatPassword) {
+            alert('Passwords do not match');
+            return;
+        }
+        const response = registerLearner(username, email, password, phoneNumber, fullname);
+        if(response) {
+            navigate('/dashboard');
+        }
+        else {
+            alert('Something went wrong');
+        }
     };
 
     const togglePasswordVisibility = () => {
@@ -68,13 +82,21 @@ const RegistrationForm = (props) => {
                     <p>
                         <div className="password-input-container">
                             <input type={showPassword ? "text" : "password"} value={password} className='text-input' placeholder='Password' onChange={handlePasswordChange} />
-                            <UilEye size="24" color="black" className='password-toggle-icon' onClick={togglePasswordVisibility} />
+                            { showPassword ? (
+                                <UilEyeSlash size="24" color="black" className='password-toggle-icon' onClick={togglePasswordVisibility} />
+                            ) : (
+                                <UilEye size="24" color="black" className='password-toggle-icon' onClick={togglePasswordVisibility} />
+                            )}                           
                         </div>
                     </p>
                     <p>
                         <div className="password-input-container">
                             <input type={showRepeatPassword ? "text" : "password"} value={repeatPassword} className='text-input' placeholder='Re-enter Password' onChange={handleRepeatPasswordChange} />
-                            <UilEye size="24" color="black" className='password-toggle-icon' onClick={toggleRepeatPasswordVisibility} />
+                            { showRepeatPassword ? (
+                                <UilEyeSlash size="24" color="black" className='password-toggle-icon' onClick={toggleRepeatPasswordVisibility} />
+                            ) : (
+                                <UilEye size="24" color="black" className='password-toggle-icon' onClick={toggleRepeatPasswordVisibility} />
+                            )}
                         </div>
                     </p>
                     <p>
