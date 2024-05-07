@@ -1,0 +1,23 @@
+/* App.css */
+
+.App {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100vw;
+}
+  
+.App-header {
+  background-color: #592584;
+  color: #fff; 
+}
+
+.App-body {
+  flex: 1; /* Fill remaining space */
+  background-color: #f0f0f0; /* Adjust body background color as needed */
+}
+
+body {
+  margin: 0;
+}
+  
