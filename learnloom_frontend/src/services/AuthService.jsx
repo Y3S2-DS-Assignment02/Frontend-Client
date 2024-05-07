@@ -53,6 +53,10 @@ export const registerInstructor = async (username, email, password, phoneNumber,
     }
 }
 
+export const logout = () => {
+    dumpLocalStorageTokens();
+}
+
 const saveToken = (token) => {
     localStorage.setItem("token", token);   
     return true;    
@@ -63,5 +67,9 @@ const saveUserId = (userId) => {
     return true;
 }
 
+const dumpLocalStorageTokens = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("userId");
+}
 
 
