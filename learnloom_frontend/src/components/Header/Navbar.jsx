@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
 import '../../utils/styles/Navbar.css';
 
+import { logout } from '../../services/AuthService';
+
 const Navbar = () => {
     const [dropdownVisible, setDropdownVisible] = useState(false);
 
     const toggleDropdown = () => {
         setDropdownVisible(!dropdownVisible);
     };
+
+    const handleLogout = () => {
+        logout();
+        window.location.href = '/';
+    }
 
     return (
         <nav>
@@ -26,9 +33,8 @@ const Navbar = () => {
                                 {dropdownVisible && (
                                     <div className="dropdown-content">
                                         <a href="/profile">Profile</a>
-                                        <a href="/profile">My Courses</a>
-                                        <a href="/profile">Logout</a>
-                                        {/* Additional options */}
+                                        <a href="/my-courses">My Courses</a>
+                                        <button className='logout-button' onClick={handleLogout}>Logout</button>
                                     </div>
                                 )}
                             </div>
