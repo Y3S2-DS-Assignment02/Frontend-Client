@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import '../../utils/styles/RegistrationForm.css';
-import { UilEye, UilEyeSlash  } from '@iconscout/react-unicons';
-import { registerLearner } from '../../services/AuthService';
-import { useNavigate } from 'react-router-dom';
-import { validateRegistrationForm } from '../../utils/helpers/validators';
 
-const RegistrationForm = (props) => {
+import { UilEye, UilEyeSlash } from '@iconscout/react-unicons';
+import { registerInstructor } from '../../services/AuthService';
+import { useNavigate } from 'react-router-dom';
+import { validateRegistrationForm } from '../../utils/helpers/validators'
+
+const InstructorRegistrationForm = (props) => {
     const { toggleLogin, toggleRegister, toggleInstructor } = props;
 
     const [username, setUsername] = useState('');
@@ -69,7 +70,7 @@ const RegistrationForm = (props) => {
             return;
         }
 
-        const response = registerLearner(username, email, password, phoneNumber, fullname);
+        const response = registerInstructor(username, email, password, phoneNumber, fullname);
         if (response) {
             navigate('/dashboard');
         } else {
@@ -132,11 +133,11 @@ const RegistrationForm = (props) => {
                         <input type="text" value={phoneNumber} className='text-input' placeholder='Phone Number' onChange={handlePhoneNumberChange} />
                         {errors.phoneNumber && <span className="error-text">{errors.phoneNumber}</span>}
                     </p>
-                    <button type="submit" className='submit-button'>Create an Account for free</button>
+                    <button type="submit" className='submit-button'>Start Teaching for Free</button>
                 </form>
             </div>
-        </div>     
+        </div>
     );
 };
 
-export default RegistrationForm;
+export default InstructorRegistrationForm;

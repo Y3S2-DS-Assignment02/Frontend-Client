@@ -1,11 +1,15 @@
 import React, { useState } from "react";
+import '../utils/styles/InitPage.css';
+
+//Components
 import Login from "../components/Auth/Login";
 import RegistrationForm from "../components/Auth/RegistrationForm";
-import '../utils/styles/InitPage.css';
+import InstructorRegistrationForm from "../components/Auth/InstructorRegistrationForm";
 
 const InitialPage = () => {
 
     const [showLogin, setShowLogin] = useState(true);
+    const [showInstructor, setShowInstructor] = useState(false);
     
     const toggleLogin = () => {
         setShowLogin(true);
@@ -13,6 +17,12 @@ const InitialPage = () => {
 
     const toggleRegister = () => {
         setShowLogin(false);
+        setShowInstructor(false);
+    }
+
+    const toggleInstructor = () => {
+        setShowInstructor(!showInstructor);
+        console.log(showInstructor)
     }
 
     return (
@@ -24,8 +34,18 @@ const InitialPage = () => {
             </div>
             <div className="render-form">
                 <div>
-                    {showLogin ? <Login toggleLogin={toggleLogin} toggleRegister={toggleRegister} /> : <RegistrationForm toggleLogin={toggleLogin} toggleRegister={toggleRegister} />}  
-                </div>    
+                    {
+                    showLogin ? 
+                    <Login toggleLogin={toggleLogin} toggleRegister={toggleRegister} /> 
+                    : 
+                    showInstructor ? 
+                    <InstructorRegistrationForm toggleLogin={toggleLogin} toggleRegister={toggleRegister} toggleInstructor={toggleInstructor} />
+                    : 
+                    <RegistrationForm toggleLogin={toggleLogin} toggleRegister={toggleRegister} toggleInstructor={toggleInstructor} /> 
+                    }
+                </div>   
+            </div>
+            <div>
             </div>
         </div>
     );
