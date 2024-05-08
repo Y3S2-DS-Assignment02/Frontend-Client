@@ -24,6 +24,7 @@ const Navbar = () => {
                         <li><a href="/services">Services</a></li>
                         <li><a href="/about">About</a></li>
                         <li><a href="/">Contact</a></li>
+                        <li><a href="/payments">Payments</a></li>
                     </div>
                     <div className='nav-row-2'>
                         <li><a href="/">Login</a></li>
