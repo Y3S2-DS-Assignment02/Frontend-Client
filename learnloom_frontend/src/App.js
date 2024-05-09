@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import PrivateRoutes from "./utils/auth/PrivateRoutes";
 import Navbar from "./components/Header/Navbar";
 import PaymentPage from "./pages/PaymentPage";
+import CoursePage from "./pages/CoursePage";
 
 import "./utils/styles/App.css";
 
@@ -18,7 +19,7 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<InitialPage />} />
-              <Route path="/courses" element={<HomePage />} exact />
+              <Route path="/courses" element={<CoursePage />} exact />
               <Route path="/login" element={<InitialPage />} exact />
               <Route path="/about" element={<HomePage />} exact />
               <Route path="/contact" element={<HomePage />} exact />
