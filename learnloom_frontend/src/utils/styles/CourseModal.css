@@ -1,3 +1,70 @@
-.img{
-    width: 100px;
+.custom-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 20px;
+    z-index: 1000;
+    display: inline;
+    width: 600px;
+}
+
+.custom-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.resource-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.resource-video {
+    max-width: 200px;
+    max-height: 250px;
+    height: 116px;
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.resource-image {
+    height: 100px;
+    width: 150px;
+}
+
+.approve-btn {
+    margin-right: 300px;
+    margin-left: 50px;
+    background-color: #046e16;
+    color: black;
+}
+
+.approve-btn:hover {
+    background-color: #11e935;
+}
+
+.reject-btn {
+    background-color: #860505;
+    color: black;
+}
+
+.reject-btn:hover {
+    background-color: #e42828;
+}
+
+.close-btn {
+    margin-top: 20px;
+    margin-left: 230px;
 }
