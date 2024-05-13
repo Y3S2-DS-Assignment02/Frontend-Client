@@ -20,7 +20,7 @@ const Navbar = () => {
             <ul>
                 <div className='nav-body'>   
                     <div className='nav-row-1'>
-                        <li><a href="/courses">Courses</a></li>
+                        <li><a href="/CoursesPage">Courses</a></li>
                         <li><a href="/services">Services</a></li>
                         <li><a href="/about">About</a></li>
                         <li><a href="/">Contact</a></li>
@@ -33,7 +33,7 @@ const Navbar = () => {
                                 {dropdownVisible && (
                                     <div className="dropdown-content">
                                         <a href="/profile">Profile</a>
-                                        <a href="/my-courses">My Courses</a>
+                                        <a href="/MyCourses">My Courses</a>
                                         <button className='logout-button' onClick={handleLogout}>Logout</button>
                                     </div>
                                 )}

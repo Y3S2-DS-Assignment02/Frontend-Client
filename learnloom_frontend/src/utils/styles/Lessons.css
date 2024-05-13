@@ -1,0 +1,40 @@
+/* Lessons.css */
+
+.lesson-container {
+    margin: 0 auto;
+    min-width: 60%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .lesson-title {
+    text-align: center;
+  }
+  
+  .lesson-description {
+    text-align: center;
+  }
+  
+  .resource-container {
+    margin-top: 20px;
+  }
+  
+  .resource-title {
+    margin-bottom: 10px;
+  }
+  
+  .resource-video {
+    display: block;
+    margin: 0 auto;
+    width: 640px;
+    height: 360px;
+  }
+  
+  .resource-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+  }
+  

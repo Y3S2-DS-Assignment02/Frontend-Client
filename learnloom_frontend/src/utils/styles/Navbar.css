@@ -43,7 +43,8 @@ button {
   width: 6rem;
 }
 
-a:hover, button:hover {
+.navbar a:hover,
+.navbar button:hover {
   background-color: #ac3cc8;
 }
 

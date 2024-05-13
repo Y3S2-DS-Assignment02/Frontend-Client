@@ -1,0 +1,72 @@
+
+
+   .course-card-container {
+    display: inline-block; /* Ensures the container takes up only as much width as necessary */
+    border: 2px  #ccc; /* Example border style */
+    border-radius: 10px; /* Example border radius */
+    padding: 10px; /* Example padding */
+    margin-bottom: 20px; /* Example margin to create space between cards */
+    background-color:#fff;
+  }
+
+   .course-card {
+    padding: 10px;
+    background-color: #FFEDEC;
+    color: #917072;
+    border-radius: 16px;
+    border: 4px solid #FFEDEC;
+    min-width: 300px;
+    max-width: 300px;
+    box-shadow: 0 0 0 4px var(--c-white);
+  }
+  
+  .course-card .inner {
+    padding: 20px;
+    padding-top: 40px;
+    background-color: #FFEDEC;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .course-card .pricing {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #c7fec2;
+    border-radius: 99em 0 0 99em;
+    display: flex;
+    align-items: center;
+    padding: .625em .75em;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color:  #0e622e;
+  }
+  
+  .course-card .title {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color:  #000000;
+    margin-top: .75rem;
+  }
+  
+  .course-card .info {
+    margin-top: 1rem;
+  }
+  
+  .course-card .button {
+    /* Existing styles */
+    font-size: 1rem; /* Adjust font size to make the button smaller */
+    padding: 0.25em; /* Adjust padding for a smaller button */
+    position: absolute; /* Position the button absolutely within the container */
+    bottom: 0; /* Align the button to the bottom */
+    right: 0; /* Align the button to the right */
+    margin-bottom: 10px; /* Add some space between the button and the bottom */
+    margin-right: 10px; /* Add some space between the button and the right */
+  }
+  
+  .course-card .button:hover,
+  .course-card .button:focus {
+    background-color: #4133B7;
+  }
+  

@@ -1,0 +1,12 @@
+.lesson-resources {
+    list-style: none; /* Remove default list styles */
+    padding-left: 0; /* Remove default padding for the list */
+  }
+  
+  .course-details > div {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange items vertically */
+   
+    
+  }
+  
