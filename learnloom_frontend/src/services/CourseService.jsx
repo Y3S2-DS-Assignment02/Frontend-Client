@@ -1,14 +1,17 @@
 import setupAxios from "./index";
 let url = process.env.REACT_APP_COURSES_BASE_API;
 
+const courseURL = "http://localhost:4000/api/course"
+
+
 //Create the axios instance for API calls
-const api = setupAxios(url);
+const api = setupAxios(courseURL);
 
 
 export const getAllCourses = async()=>{
     try{
 
-        const response = await api.get(`${url}/courses`);
+        const response = await api.get(`${courseURL}/courses`);
         
         return response.data.data;
 
@@ -21,7 +24,7 @@ export const getAllCourses = async()=>{
 
 export const getCourseByID = async (courseId) => {
     try {
-      const response = await api.get(`${url}/courses/${courseId}`);
+      const response = await api.get(`${courseURL}/courses/${courseId}`);
       return response.data.data;
     } catch (error) {
       console.error(error);
