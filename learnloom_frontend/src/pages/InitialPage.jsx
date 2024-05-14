@@ -22,7 +22,7 @@ const InitialPage = () => {
 
     const toggleInstructor = () => {
         setShowInstructor(!showInstructor);
-        console.log(showInstructor)
+        //console.log(showInstructor)
     }
 
     return (

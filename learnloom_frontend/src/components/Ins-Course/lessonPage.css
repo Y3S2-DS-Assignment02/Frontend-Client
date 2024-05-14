@@ -1,0 +1,120 @@
+
+
+.lesson-page {
+    padding: 20px;
+  }
+  
+  .lesson {
+    margin-bottom: 20px;
+  }
+  
+  .lesson h2 {
+    margin-bottom: 10px;
+  }
+  
+  .lesson p {
+    margin-bottom: 15px;
+  }
+  
+  .resource,
+  .quiz {
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .resource img,
+  .quiz img {
+    max-width: 100%;
+    border-radius: 5px;
+  }
+  
+  .resource video,
+  .quiz video {
+    max-width: 100%;
+    border-radius: 5px;
+  }
+  
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .modal-content button {
+    margin-right: 10px;
+  }
+  
+  .modal-content input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .modal-content textarea {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .button-container {
+    margin-top: 10px;
+  }
+  
+  .button-container button {
+    margin-right: 10px;
+    padding: 8px 16px;
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .button-container button:hover {
+    background-color: #005bb5;
+  }
+  
+
+.buttonbox{
+    display: flex;
+    justify-content: flex-end;
+}
+  .buttonbox button {
+    background-color: transparent;
+    border: none;
+    color: #592584;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 5px;
+    width: 40px;
+  }
+  
+  .buttonbox button:focus {
+    outline: none;
+  }
+  
+  /* Adjust icon size if needed */
+  .buttonbox button svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Style on hover */
+  .buttonbox button:hover svg {
+    fill: #ac3cc8; /* Change icon color on hover */
+   
+  }
+
+ 
