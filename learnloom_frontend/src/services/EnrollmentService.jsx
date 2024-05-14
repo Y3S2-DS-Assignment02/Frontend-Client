@@ -1,6 +1,6 @@
 import setupAxios from "./index";
 
-const baseURL = 'http://localhost:3002/api/enroll'; // Base URL for enrollment API
+const baseURL = process.env.REACT_APP_LEARNER_BASE_API; // Base URL for enrollment API
 const api = setupAxios(baseURL);
 
 export async function fetchEnrolledCourses(studentId) {
@@ -43,6 +43,30 @@ export async function enrollCourse(userId, [id]) {
 
     return response.data; // Return data if needed
   } catch (error) {
+    throw error;
+  }
+}
+
+// Function to update progress
+export async function updateProgress(enrolledCourseId, userId, courseId, progress) {
+  try {
+    const response = await api.patch(`/update/${enrolledCourseId}`, {
+      studentID: userId,
+      courses: [
+        {
+          courseId: courseId,
+          progress: progress,
+        },
+      ],
+    });
+
+    if (response.status === 200) {
+      console.log("Progress updated successfully.");
+    } else {
+      throw new Error("Failed to update progress.");
+    }
+  } catch (error) {
+    console.error("Error updating progress:", error);
     throw error;
   }
 }

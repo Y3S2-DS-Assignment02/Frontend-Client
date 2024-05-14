@@ -2,7 +2,7 @@
 // lessonService.js
 import setupAxios from "./index";
 
-const baseUrl = 'http://localhost:4000/api/course/courses';
+const baseUrl = process.env.REACT_APP_COURSEVIEW_BASE_API;
 
 // Set up axios instance for lesson service
 const api = setupAxios(baseUrl);

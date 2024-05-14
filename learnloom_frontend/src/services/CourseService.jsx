@@ -1,6 +1,6 @@
 // courseService.js
 import setupAxios from "./index";
-const url = 'http://localhost:4000/api/course/courses';
+const url = process.env.REACT_APP_COURSEVIEW_BASE_API;
 const api = setupAxios(url);
 export async function fetchCourses() {
     try {

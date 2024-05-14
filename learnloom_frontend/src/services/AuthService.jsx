@@ -12,6 +12,7 @@ export const login = async (email, password) => {
         console.log(response.data.data)
         saveToken(response.data.data.token)
         saveUserId(response.data.data.userId)
+        saveRole(response.data.data.role)
         return response.status === 200 ? true : false;
     } catch (error) {
         console.error(error);
@@ -27,6 +28,7 @@ export const registerLearner = async (username, email, password, phoneNumber, fu
         if(response.status === 201) {
             saveToken(response.data.data.token)
             saveUserId(response.data.data.userId)
+            saveRole(response.data.data.role)
             return true;
         }
         return false;
@@ -44,6 +46,7 @@ export const registerInstructor = async (username, email, password, phoneNumber,
         if(response.status === 201) {
             saveToken(response.data.data.token)
             saveUserId(response.data.data.userId)
+            saveRole(response.data.data.role)
             return true;
         }
         return false;
@@ -65,6 +68,11 @@ const saveToken = (token) => {
 const saveUserId = (userId) => {
     localStorage.setItem("userId", userId); 
     return true;
+}
+
+const saveRole = (role) => {
+    localStorage.setItem("role", role);   
+    return true;    
 }
 
 const dumpLocalStorageTokens = () => {

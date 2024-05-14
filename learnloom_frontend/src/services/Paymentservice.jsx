@@ -23,7 +23,7 @@
 
 import axios from "axios";
 
-const baseUrl = 'http://localhost:3004/api/payments'; // Base URL for payment API
+const baseUrl = process.env.REACT_APP_PAYMENT_BASE_API; // Base URL for payment API
 
 // Set up axios instance for payment service
 const api = axios.create({
