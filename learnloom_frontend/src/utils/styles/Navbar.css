@@ -40,11 +40,22 @@ button {
   padding: 8px 12px;
   transition: background-color 0.3s;
   border-radius: 15px;
+  border: none;
+  margin: 5px;
   width: 6rem;
+  cursor: pointer;
 }
 
-.navbar a:hover,
-.navbar button:hover {
+/* Styles for disabled button */
+button[disabled] {
+  background-color: #b3b2b4;
+  color: #000000;
+  opacity: 0.7; /* Reduce opacity to visually indicate disabled state */
+  cursor: not-allowed; /* Change cursor to not-allowed */
+}
+
+/* Styles for hover state */
+a:hover, button:hover {
   background-color: #ac3cc8;
 }
 
