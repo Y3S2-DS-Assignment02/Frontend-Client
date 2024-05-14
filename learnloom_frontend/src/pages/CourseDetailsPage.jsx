@@ -75,21 +75,29 @@ const handleSuccessfulPayment = async () => {
   return (
     <div className="course-details">
       <h1>Course Details</h1>
-      <p>ID: {course._id}</p>
-      <p>Title: {course.title}</p>
-      <p>Description: {course.description}</p>
-      <p>Price: {course.price}</p>
-      <p>Duration: {course.duration}</p>
+      <h2>Title: {course.title}</h2>
+      <p><strong>Description:</strong>{course.description}</p>
+      <div style={{ backgroundColor: '#c7fec2', width: '7%', borderRadius: '10px', marginBottom: '10px', marginLeft: '10px', color:'#0e622e' }}>
+    <h3>$: {course.price}</h3>
+  </div>
+  <div style={{ backgroundColor: 'red', width: '7%', borderRadius: '10px', marginLeft: '10px' }}>
+    <h3>hrs: {course.duration}</h3>
+  </div>
 
       <div>
         <h2>Lessons</h2>
         {course.lessons.map((lesson, index) => (
           <div key={index}>
             <h3>{lesson.title}</h3>
-            <ul>
+            <ul >
               {lesson.resources.map((resource, resIndex) => (
-                <ul>
-                <li key={resIndex}>{resource.title}</li>
+                <ul style={{ textAlign: 'left'}}>
+                <li style={{ marginLeft: 0, paddingLeft: 0 }} key={resIndex}>
+             
+                  {resource.title}
+                  
+                  
+                  </li>
                 </ul>
               ))}
             </ul>
