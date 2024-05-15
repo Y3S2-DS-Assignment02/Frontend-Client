@@ -456,11 +456,13 @@ const LessonPage = () => {
           style={{
             width: "25%",
             display: "flex",
-            justifyContent: "flex-end",
+            flexDirection:"column",
+            alignItems:"flex-end",
             paddingRight: "10px",
           }}
         >
           {enrolls && <h3>Enrolled Student :  {enrolls} </h3>}
+          {courses && <h3>Status :  {courses.isApproved ? "Approved": "Not Approved"} </h3>}
         </div>
       </div>
 
