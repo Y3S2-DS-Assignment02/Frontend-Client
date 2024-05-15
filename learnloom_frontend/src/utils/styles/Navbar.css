@@ -55,8 +55,12 @@ button[disabled] {
 }
 
 /* Styles for hover state */
-a:hover, button:hover {
+ button:hover {
   background-color: #ac3cc8;
+}
+
+a:hover{
+  color: #b3b2b4;
 }
 
 .nav-body {

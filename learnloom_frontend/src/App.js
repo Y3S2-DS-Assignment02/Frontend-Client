@@ -13,6 +13,8 @@ import Payment from "./pages/payment";
 import "./utils/styles/App.css";
 import MycoursesforIns from "./pages/MycoursesforIns";
 import LessonPage from "./components/Ins-Course/LessonPage";
+import ContactUs from "./pages/ContactUs";
+import AboutUs from "./pages/AboutUs";
 
 function App() {
   return (
@@ -25,10 +27,10 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<InitialPage />} />
-
+              <Route path="/home" element={<HomePage />} exact />
               <Route path="/login" element={<InitialPage />} exact />
-              <Route path="/about" element={<HomePage />} exact />
-              <Route path="/contact" element={<HomePage />} exact />
+              <Route path="/about" element={<AboutUs />} exact />
+              <Route path="/contact" element={<ContactUs />} exact />
               <Route path="/services" element={<HomePage />} exact />
 
               <Route path="/payment" element={<Payment />} exact />
